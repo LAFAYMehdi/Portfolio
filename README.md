@@ -1,5 +1,7 @@
 # Portfolio BUT Informatique - Mehdi LAFAY
 
+[Mon Portfolio](https://lafaymehdi.github.io/Portfolio/)
+
 ## Description
 
 Portfolio académique présentant l'analyse de deux compétences clés développées durant la première année de BUT Informatique à l'Université de Franche-Comté.
