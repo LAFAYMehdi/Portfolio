@@ -947,9 +947,9 @@ public static double[] resample(double[] inputWav, double <strong>freqScale</str
     int <strong>outputLength</strong> = (int) (inputWav.length / <strong>freqScale</strong>);
     double[] output = new double[<strong>outputLength</strong>];
     
-    for (int i = 0; i < <strong>outputLength</strong>; i++) {
+    for (int i = 0; i &lt; <strong>outputLength</strong>; i++) {
         int <strong>sourceIndex</strong> = (int) (i * <strong>freqScale</strong>);
-        if (<strong>sourceIndex</strong> < inputWav.length) {
+        if (<strong>sourceIndex</strong> &lt; inputWav.length) {
             output[i] = inputWav[<strong>sourceIndex</strong>];
         }
     }
@@ -972,7 +972,7 @@ public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>d
                 <p>
                     Ces extraits montrent ma capacité à programmer des <strong>algorithmes de traitement audio</strong>. 
                     La méthode <code>resample()</code> permet de modifier la hauteur du son en changeant la vitesse de lecture. 
-                    Le <strong>facteur de fréquence</strong> détermine si le son devient plus aigu (valeur > 1) ou plus grave (valeur < 1). 
+                    Le <strong>facteur de fréquence</strong> détermine si le son devient plus aigu (valeur > 1) ou plus grave (valeur &lt; 1). 
                     Le calcul <code>sourceIndex = i * freqScale</code> permet de sélectionner les bons échantillons dans le fichier original.
                 </p>
                 
@@ -1016,10 +1016,10 @@ public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>d
                 répondant aux besoins des utilisateurs et entreprises.
             </p>
 
-            <div style="text-align: center; margin: 2rem 0;">
+            <p style="text-align: center; margin: 2rem 0;">
                 <a href="#competence2" class="btn">Compétence 2 →</a>
                 <a href="#accueil" class="btn btn-outline">↑ Retour au sommaire</a>
-            </div>
+            </p>
         </section>
 
         <!-- COMPETENCE 2 -->
@@ -1238,11 +1238,11 @@ public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>d
                 </p>
             </div>
 
-            <div style="text-align: center; margin: 2rem 0;">
+            <p style="text-align: center; margin: 2rem 0;">
                 <a href="#competence1" class="btn btn-outline">← Compétence 1</a>
                 <a href="#accueil" class="btn">↑ Retour au sommaire</a>
                 <a href="#contact" class="btn">Contact →</a>
-            </div>
+            </p>
         </section>
 
         <!-- COMPLEMENTARITE ET REFLEXION -->
@@ -1319,12 +1319,12 @@ public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>d
                 des applications web complexes, des bases de données ou des architectures distribuées.
             </p>
 
-            <div style="text-align: center; margin: 2rem 0;">
+            <p style="text-align: center; margin: 2rem 0;">
                 <a href="#competence1" class="btn btn-outline">← Compétence 1</a>
                 <a href="#competence2" class="btn btn-outline">← Compétence 2</a>
                 <a href="#accueil" class="btn">↑ Retour au sommaire</a>
                 <a href="#contact" class="btn">Contact →</a>
-            </div>
+            </p>
         </section>
     </main>
 
@@ -1338,9 +1338,9 @@ public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>d
         <p class="eco-note">
             <small>✅ Site éco-conçu : Une seule page, CSS inline, polices système, validé W3C</small>
         </p>
-        <div style="margin-top: 1rem;">
+        <p style="margin-top: 1rem;">
             <a href="#accueil" class="btn btn-outline">↑ Retour en haut</a>
-        </div>
+        </p>
     </footer>
 </body>
 </html> 
