@@ -54,4 +54,24 @@ hs_err_pid*
 # *_Resampled.wav
 # *_Simple.wav
 # *_SimpleOver.wav
-# *_SimpleOverCrossEcho.wav 
+# *_SimpleOverCrossEcho.wav
+
+# Fichiers de sauvegarde
+*.zip
+*backup*
+*BACKUP*
+
+# Fichiers temporaires
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Fichiers de développement
+.vscode/
+.idea/
+
+# Fichiers système
+*.tmp
+*.temp 

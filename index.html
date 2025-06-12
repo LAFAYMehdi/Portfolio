@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Mehdi LAFAY - BUT Informatique. Analyse de 2 compétences avec traces et SAÉ.">
+    <meta name="author" content="Mehdi LAFAY">
+    <meta name="keywords" content="BUT Informatique, portfolio, compétences, SAÉ, développement">
+    <title>Portfolio - Mehdi LAFAY | BUT Informatique</title>
+    
+    <!-- CSS inline pour optimiser les performances et réduire l'empreinte carbone -->
+    <style>
+        /* Variables CSS pour le thème macOS */
+        :root {
+            --macos-blue: #007AFF;
+            --macos-purple: #AF52DE;
+            --macos-pink: #FF2D92;
+            --macos-red: #FF3B30;
+            --macos-orange: #FF9500;
+            --macos-yellow: #FFCC00;
+            --macos-green: #34C759;
+            --macos-teal: #5AC8FA;
+            --macos-indigo: #5856D6;
+            
+            --macos-gray-1: #8E8E93;
+            --macos-gray-2: #AEAEB2;
+            --macos-gray-3: #C7C7CC;
+            --macos-gray-4: #D1D1D6;
+            --macos-gray-5: #E5E5EA;
+            --macos-gray-6: #F2F2F7;
+            
+            --macos-bg: #FFFFFF;
+            --macos-bg-secondary: #F2F2F7;
+            --macos-bg-tertiary: #FFFFFF;
+            --macos-text-primary: #000000;
+            --macos-text-secondary: #3C3C43;
+            --macos-text-tertiary: #3C3C4399;
+            
+            --macos-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --macos-shadow-large: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.1);
+            --macos-blur: blur(20px);
+            
+            --max-width: 1200px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.75rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+        }
+
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--macos-text-primary);
+            background: linear-gradient(135deg, #f8f9fb 0%, #e8f0fe 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Scroll smooth pour la navigation par ancres */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset pour compenser le header sticky */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* Header et Navigation éco-responsable */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 70px;
+        }
+
+        nav h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav h1 a {
+            color: var(--macos-text-primary);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--macos-text-secondary);
+            text-decoration: none;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            line-height: 1;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:hover, nav a:focus {
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--macos-blue);
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        /* Cards avec style éco-responsable */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--macos-shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--macos-shadow-large);
+        }
+
+        /* Main content */
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        section {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        /* Hero section avec style macOS élégant */
+        .hero {
+            text-align: center;
+            padding: var(--spacing-xxl) var(--spacing-xl);
+            background: linear-gradient(135deg, #f8f9fb 0%, #e8f0fe 100%);
+            border: 1px solid rgba(0, 122, 255, 0.1);
+            margin: 0 0 var(--spacing-xxl) 0;
+            border-radius: var(--border-radius-xl);
+            color: var(--macos-text-primary);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--macos-shadow-large);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--macos-blue), var(--macos-purple), var(--macos-pink), var(--macos-orange));
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--macos-text-secondary);
+        }
+
+        /* Typography avec style macOS */
+        h1, h2, h3, h4 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--macos-text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--macos-blue);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: var(--spacing-lg);
+            color: var(--macos-text-primary);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--macos-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Buttons avec style macOS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--macos-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--macos-blue);
+            border: 2px solid var(--macos-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--macos-blue);
+            color: white;
+        }
+
+        /* GitHub links avec style macOS */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: linear-gradient(135deg, #24292e, #2f363d);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .github-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .github-link:hover::before {
+            left: 100%;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(36, 41, 46, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Navigation des compétences avec style macOS */
+        .competences-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            flex-wrap: wrap;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            text-decoration: none;
+            color: var(--macos-text-primary);
+            transition: box-shadow 0.2s ease;
+            min-width: 300px;
+            max-width: 450px;
+            flex: 1;
+            box-shadow: var(--macos-shadow);
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+        }
+
+        .nav-card:hover {
+            box-shadow: var(--macos-shadow-large);
+            text-decoration: none;
+            color: var(--macos-text-primary);
+        }
+
+        .nav-card h3 {
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-card p {
+            color: var(--macos-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Tables avec style macOS */
+        .table-container {
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--macos-shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--macos-bg);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--macos-gray-5);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--macos-gray-6), var(--macos-bg));
+            font-weight: 600;
+            color: var(--macos-text-primary);
+            position: relative;
+        }
+
+        th::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+        }
+
+        tr:hover {
+            background: rgba(0, 122, 255, 0.05);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Traces avec style macOS */
+        .trace {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--macos-shadow);
+        }
+
+
+
+        .trace h4 {
+            color: var(--macos-blue);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.3rem;
+        }
+
+        .trace img {
+            max-width: 100%;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--macos-shadow);
+            margin: var(--spacing-lg) 0;
+            transition: transform 0.3s ease;
+        }
+
+        .trace img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Lists avec style macOS */
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+            color: var(--macos-text-secondary);
+        }
+
+        /* Footer avec style macOS */
+        footer {
+            background: linear-gradient(135deg, var(--macos-gray-6), var(--macos-bg));
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            text-align: center;
+            margin-top: var(--spacing-xxl);
+            border-top: 1px solid var(--macos-gray-5);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--macos-blue), transparent);
+        }
+
+        footer h2 {
+            background: linear-gradient(135deg, var(--macos-blue), var(--macos-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .eco-note {
+            background: rgba(52, 199, 89, 0.1);
+            border: 1px solid rgba(52, 199, 89, 0.2);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+            color: var(--macos-green);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            :root {
+                --spacing-lg: 1rem;
+                --spacing-xl: 1.5rem;
+                --spacing-xxl: 2rem;
+            }
+
+            nav {
+                padding: var(--spacing-sm);
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                min-height: auto;
+            }
+
+            nav ul {
+                justify-content: center;
+                width: 100%;
+                gap: var(--spacing-sm);
+            }
+
+            .hero {
+                padding: var(--spacing-xl) var(--spacing-lg);
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .competences-nav {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .nav-card {
+                min-width: auto;
+                max-width: none;
+            }
+
+            .card {
+                padding: var(--spacing-lg);
+            }
+
+            .trace {
+                padding: var(--spacing-lg);
+            }
+
+            main {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .table-container {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations et micro-interactions */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card, .trace, .nav-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scrollbar personnalisée pour macOS */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--macos-gray-6);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--macos-gray-3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--macos-gray-2);
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: rgba(0, 122, 255, 0.2);
+            color: var(--macos-text-primary);
+        }
+
+        /* Focus styles pour l'accessibilité */
+        *:focus {
+            outline: 2px solid var(--macos-blue);
+            outline-offset: 2px;
+        }
+
+        /* Amélioration des contrastes pour l'accessibilité */
+        strong {
+            color: var(--macos-text-primary);
+            font-weight: 600;
+        }
+
+        em {
+            color: var(--macos-text-secondary);
+            font-style: italic;
+        }
+
+        /* Styles pour les blocs de code */
+        pre {
+            background: var(--macos-gray-6);
+            border: 1px solid var(--macos-gray-4);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-md);
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        code {
+            background: var(--macos-gray-5);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--macos-text-primary);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: var(--macos-text-primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="#accueil">Portfolio</a></h1>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#competence1">Compétence 1</a></li>
+                <li><a href="#competence2">Compétence 2</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION ACCUEIL -->
+        <section id="accueil" class="hero">
+            <h1>Mehdi LAFAY</h1>
+            <p class="subtitle">Portfolio BUT Informatique - Première année</p>
+            <p>
+                Étudiant en première année de BUT Informatique, ce portfolio présente l'analyse de deux compétences 
+                clés que j'ai développées au cours du premier semestre de ma formation. Chaque compétence est illustrée par des traces 
+                concrètes issues de mes Situations d'Apprentissage et d'Évaluation (SAÉ) réalisées durant ce semestre.
+            </p>
+        </section>
+
+        <!-- NAVIGATION VERS LES COMPETENCES -->
+        <section>
+            <h2>Compétences analysées</h2>
+            <div class="competences-nav">
+                <div class="nav-card">
+                    <h3><a href="#competence1">Compétence 1</a></h3>
+                    <p>Réaliser un développement d'application</p>
+                    <p><small>Projet Vocodeur du Pauvre - Interface graphique et algorithmes</small></p>
+                </div>
+                
+                <div class="nav-card">
+                    <h3><a href="#competence2">Compétence 2</a></h3>
+                    <p>Optimiser des applications informatiques</p>
+                    <p><small>Projet TechSpotlight-Atos - Éco-conception et validation W3C</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- METHODOLOGIE -->
+        <section class="card">
+            <h2>Méthodologie d'analyse</h2>
+            <p>Pour chaque compétence, j'ai structuré mon analyse selon les axes suivants :</p>
+            <ol>
+                <li><strong>Définition</strong> : Référentiel officiel de la compétence</li>
+                <li><strong>Savoirs et savoir-faire</strong> : Identification des connaissances requises</li>
+                <li><strong>Mise en œuvre</strong> : Application concrète lors des SAÉ</li>
+                <li><strong>Traces</strong> : Illustrations pertinentes avec justifications</li>
+                <li><strong>Réflexion critique</strong> : Niveau atteint et perspectives</li>
+            </ol>
+        </section>
+
+        <!-- COMPETENCE 1 -->
+        <section id="competence1" class="card">
+            <h2>Compétence 1 : Réaliser un développement d'application</h2>
+            
+            <h3>Définition de la compétence</h3>
+            <p>
+                <strong>Réaliser un développement d'application</strong> consiste à élaborer et implémenter des 
+                solutions logicielles en réponse à un besoin exprimé par un client ou utilisateur. Cette compétence 
+                implique la maîtrise des langages de programmation, la conception d'architectures logicielles 
+                appropriées, et l'application de méthodologies de développement rigoureuses.
+            </p>
+            <p>
+                Cette compétence est fondamentale dans la formation BUT Informatique car elle constitue le cœur 
+                du métier de développeur. Elle permet de transformer des spécifications fonctionnelles en 
+                applications opérationnelles, en respectant les contraintes techniques et les bonnes pratiques 
+                de développement.
+            </p>
+
+            <h3>Savoirs et savoir-faire requis</h3>
+            
+            <h4>Savoirs théoriques</h4>
+            <ul>
+                <li><strong>Programmation orientée objet</strong> : Encapsulation, héritage, polymorphisme</li>
+                <li><strong>Algorithmique avancée</strong> : Structures de données, complexité, optimisation</li>
+                <li><strong>Traitement du signal numérique</strong> : Échantillonnage, ré-échantillonnage, corrélation</li>
+                <li><strong>Interfaces utilisateur</strong> : Conception d'IHM, gestion des événements</li>
+                <li><strong>Gestion d'erreurs</strong> : Validation, exceptions, robustesse</li>
+            </ul>
+
+            <h4>Savoir-faire pratiques</h4>
+            <ul>
+                <li><strong>Implémentation d'algorithmes complexes</strong> : Traduction de concepts mathématiques en code</li>
+                <li><strong>Conception d'interfaces</strong> : Développement d'IHM ergonomiques et fonctionnelles</li>
+                <li><strong>Optimisation de code</strong> : Amélioration des performances et de la qualité</li>
+                <li><strong>Tests et validation</strong> : Création de jeux d'essais, traces d'exécution</li>
+                <li><strong>Documentation technique</strong> : Rédaction de spécifications et guides utilisateur</li>
+            </ul>
+
+            <h3>Mise en œuvre lors des SAÉ</h3>
+            
+            <div class="sae-analysis">
+                <h4>SAÉ S1.01 : Implémentation d'un besoin client - Vocodeur du Pauvre</h4>
+                
+                <p><strong>Contexte du projet :</strong></p>
+                <p>
+                    Développement en binôme d'un programme de traitement audio permettant de modifier la hauteur 
+                    de la voix sans altérer le débit de parole. Le projet devait respecter des spécifications 
+                    techniques strictes et inclure une interface graphique complète. Collaboration avec 
+                    <strong>Aylan HADDOUCHI</strong> (Groupe S1.B1).
+                </p>
+                
+                <p><strong>Période de réalisation :</strong></p>
+                <ul>
+                    <li><strong>Période :</strong> Novembre-décembre 2024</li>
+                    <li><strong>Rendu :</strong> Dimanche 22 décembre 2024</li>
+                    <li><strong>Soutenance :</strong> Jeudi 9 janvier 2025</li>
+                    <li><strong>Durée du projet :</strong> 8 semaines</li>
+                </ul>
+                
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    <a href="https://github.com/LAFAYMehdi/VocodeurDuPauvre" target="_blank" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Voir le code source sur GitHub
+                    </a>
+                </p>
+
+                <p><strong>Application de la compétence :</strong></p>
+                <p>
+                    La réalisation du Vocodeur du Pauvre a nécessité la mobilisation complète de cette compétence : 
+                    conception d'algorithmes de traitement du signal, implémentation de trois versions optimisées 
+                    successivement, développement d'une interface graphique Swing, et création d'un système complet 
+                    de tests et validation. Le défi principal était de traduire des concepts mathématiques complexes 
+                    en code Java performant et maintenable.
+                </p>
+
+                <p><strong>Savoirs mobilisés :</strong></p>
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Savoir/Savoir-faire</th>
+                            <th>Situation d'application</th>
+                            <th>Résultat obtenu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Algorithmique avancée</td>
+                            <td>Implémentation des algorithmes de ré-échantillonnage et dilatation temporelle</td>
+                            <td>3 versions d'algorithmes avec qualité croissante</td>
+                        </tr>
+                        <tr>
+                            <td>Interface utilisateur Swing</td>
+                            <td>Développement de PauvocoderInterface.java avec contrôles temps réel</td>
+                            <td>Interface complète et ergonomique</td>
+                        </tr>
+                        <tr>
+                            <td>Traitement de données audio</td>
+                            <td>Manipulation de tableaux de samples 44.1kHz</td>
+                            <td>Support WAV 16-bits avec préservation qualité</td>
+                        </tr>
+                        <tr>
+                            <td>Tests et validation</td>
+                            <td>Création de traces d'exécution et jeux d'essais</td>
+                            <td>203 lignes de logs, captures d'écran validées</td>
+                        </tr>
+                        <tr>
+                            <td>Qualité logicielle</td>
+                            <td>Respect des normes SonarQube IUT avec validation SonarLint</td>
+                            <td>Code conforme aux standards professionnels</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <h3>Traces et illustrations</h3>
+            
+            <div class="trace">
+                <h4>Trace 1 : Interface graphique du Vocodeur du Pauvre</h4>
+                <p><strong>Contexte :</strong> Capture d'écran de l'interface utilisateur Swing développée pour le projet Vocodeur du Pauvre, montrant l'application en cours d'utilisation avec ses différents contrôles et fonctionnalités</p>
+                <p><strong>Justification :</strong> Cette trace illustre concrètement ma maîtrise du développement d'applications Java complètes avec interface graphique professionnelle, gestion d'événements utilisateur et architecture logicielle bien structurée</p>
+                
+                <img src="vocodeur-interface-graphique.png" alt="Interface graphique du Vocodeur du Pauvre" style="max-width: 100%; border: 1px solid #dee2e6; border-radius: 4px; margin: 1rem 0;">
+                <p><em>Figure 1 : Interface graphique du Vocodeur du Pauvre montrant les contrôles de fréquence, la sélection de fichiers WAV, les modes de traitement (Simple, SimpleOver, OverCross), et les boutons de lecture/sauvegarde. Cette capture illustre ma capacité à développer une application Java complète avec interface utilisateur intuitive et contrôles temps réel.</em></p>
+                
+                <p>
+                    Pour réaliser cette interface, j'ai dû mobiliser des <strong>savoirs en programmation Java Swing</strong> : 
+                    gestion des événements via ActionListener et ChangeListener, manipulation des composants graphiques 
+                    (JButton, JSlider, JFileChooser, JLabel), et intégration des bibliothèques audio StdAudio. On observe dans la figure 
+                    le contrôle de fréquence central avec boutons +/- et affichage numérique (actuellement à 1.0), qui nécessite 
+                    la synchronisation entre le slider et les boutons via des listeners dédiés.
+                </p>
+                
+                <p>
+                    Sur le plan technique, j'ai implémenté une <strong>gestion événementielle robuste</strong> en créant 
+                    des ActionListener spécifiques pour chaque contrôle. Le défi principal était de gérer la cohérence entre 
+                    les différents éléments d'interface : quand l'utilisateur clique sur "+" (visible en haut à droite), 
+                    le système doit mettre à jour simultanément le slider, l'affichage numérique et recalculer les paramètres 
+                    audio. Cette synchronisation m'a obligé à concevoir une logique de mise à jour coordonnée entre composants, 
+                    démontrant ma maîtrise de la <strong>programmation événementielle</strong> et de l'<strong>intégration d'APIs audio</strong>.
+                </p>
+                
+                <p>
+                    La gestion des fichiers audio visible dans l'interface (boutons "Ouvrir" et "Sauvegarder" en bas) illustre 
+                    ma capacité à intégrer des <strong>API Java complexes</strong>. J'ai dû implémenter une validation robuste 
+                    des formats WAV 16-bits 44.1kHz, avec gestion des exceptions pour les fichiers corrompus ou incompatibles. 
+                    Le système affiche des messages d'erreur explicites sans planter l'application, respectant ainsi les 
+                    <strong>principes de robustesse logicielle</strong> exigés par les normes SonarQube de l'IUT.
+                </p>
+                
+                <p>
+                    Cette interface démontre ma maîtrise de la <strong>compétence "Réaliser un développement d'application"</strong>, 
+                    particulièrement dans les domaines de l'interface homme-machine, de la programmation événementielle et 
+                    de l'intégration d'APIs spécialisées. Elle illustre également ma capacité à produire du code maintenable 
+                    et conforme aux standards professionnels du développement logiciel.
+                </p>
+            </div>
+
+            <div class="trace">
+                <h4>Trace 2 : Algorithmes de traitement audio - Code source Java</h4>
+                <p><strong>Contexte :</strong> Extraits du code source des méthodes principales de traitement audio, montrant l'implémentation des algorithmes de ré-échantillonnage et de dilatation temporelle avec leurs optimisations</p>
+                <p><strong>Justification :</strong> Cette trace démontre ma capacité à traduire des concepts mathématiques complexes de traitement du signal en code Java optimisé, avec gestion des contraintes de performance</p>
+                
+                <pre><code>
+// Algorithme de <strong>ré-échantillonnage</strong> avec <strong>facteur de fréquence</strong>
+public static double[] resample(double[] inputWav, double <strong>freqScale</strong>) {
+    int <strong>outputLength</strong> = (int) (inputWav.length / <strong>freqScale</strong>);
+    double[] output = new double[<strong>outputLength</strong>];
+    
+    for (int i = 0; i < <strong>outputLength</strong>; i++) {
+        int <strong>sourceIndex</strong> = (int) (i * <strong>freqScale</strong>);
+        if (<strong>sourceIndex</strong> < inputWav.length) {
+            output[i] = inputWav[<strong>sourceIndex</strong>];
+        }
+    }
+    return output;
+}
+
+// <strong>Dilatation temporelle</strong> optimisée avec recherche de <strong>motifs</strong>
+public static double[] vocodeSimpleOverCross(double[] inputWav, double <strong>dilatation</strong>) {
+    final int <strong>SEQUENCE</strong> = 4410;  // 1/10 seconde à <strong>44.1kHz</strong>
+    final int <strong>OVERLAP</strong> = 882;    // Zone de <strong>chevauchement</strong>
+    final int <strong>SEEK_WINDOW</strong> = 661; // Fenêtre de recherche
+    
+    // Implémentation de l'algorithme avec optimisation par <strong>corrélation</strong>
+    // ...code de traitement par séquences avec minimisation de <strong>distorsion</strong>
+}
+                </code></pre>
+                
+                <p><em>Figure 2 : Extraits des méthodes principales de traitement audio montrant la structure algorithmique du Vocodeur du Pauvre. Ce code illustre ma capacité à implémenter des algorithmes complexes de traitement du signal en Java avec des optimisations de performance.</em></p>
+                
+                <p>
+                    Ces extraits montrent ma capacité à programmer des <strong>algorithmes de traitement audio</strong>. 
+                    La méthode <code>resample()</code> permet de modifier la hauteur du son en changeant la vitesse de lecture. 
+                    Le <strong>facteur de fréquence</strong> détermine si le son devient plus aigu (valeur > 1) ou plus grave (valeur < 1). 
+                    Le calcul <code>sourceIndex = i * freqScale</code> permet de sélectionner les bons échantillons dans le fichier original.
+                </p>
+                
+                <p>
+                    L'algorithme <code>vocodeSimpleOverCross()</code> est plus sophistiqué car il évite les coupures brutales dans le son. 
+                    Les constantes <strong>SEQUENCE</strong> (4410 échantillons = 100ms), <strong>OVERLAP</strong> (zone de mélange) et 
+                    <strong>SEEK_WINDOW</strong> (zone de recherche) permettent de créer des transitions fluides entre les segments audio. 
+                    Cette méthode produit un son de meilleure qualité en évitant les "clics" audibles qu'on entendrait sinon.
+                </p>
+                
+                <p>
+                    Pour optimiser le programme, j'ai utilisé des tableaux <code>double[]</code> simples plutôt que des structures plus complexes. 
+                    Le traitement par petits blocs de 4410 échantillons permet de traiter même de gros fichiers audio sans saturer la mémoire. 
+                    Cette approche garantit que le programme reste fluide même avec des fichiers de plusieurs minutes.
+                </p>
+            </div>
+
+            <h3>Réflexion critique</h3>
+            
+            <h4>Niveau de maîtrise atteint</h4>
+            <p>
+                Le succès du projet Vocodeur du Pauvre (note 20/20) témoigne d'une solide maîtrise de cette compétence. 
+                Je maîtrise particulièrement bien la programmation Java orientée objet, la conception d'interfaces 
+                utilisateur et l'implémentation d'algorithmes complexes. La capacité à traduire des spécifications 
+                mathématiques en code fonctionnel représente un point fort développé lors de ce projet.
+            </p>
+
+            <h4>Difficultés rencontrées</h4>
+            <p>
+                La principale difficulté a été l'optimisation des algorithmes de traitement audio pour minimiser 
+                les artefacts sonores. La gestion de la mémoire pour les gros fichiers audio et la synchronisation 
+                entre interface graphique et traitement ont également nécessité plusieurs itérations. Ces défis ont 
+                été surmontés par une approche méthodique d'amélioration progressive et de tests intensifs.
+            </p>
+
+            <h4>Perspectives</h4>
+            <p>
+                Cette compétence sera cruciale tout au long de ma formation BUT, notamment pour les SAÉ impliquant 
+                le développement web, mobile ou les projets de grande envergure. Dans ma future carrière de développeur, 
+                elle constituera le socle technique permettant de réaliser des applications robustes et performantes 
+                répondant aux besoins des utilisateurs et entreprises.
+            </p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#competence2" class="btn">Compétence 2 →</a>
+                <a href="#accueil" class="btn btn-outline">↑ Retour au sommaire</a>
+            </div>
+        </section>
+
+        <!-- COMPETENCE 2 -->
+        <section id="competence2" class="card">
+            <h2>Compétence 2 : Optimiser des applications informatiques</h2>
+            
+            <h3>Définition de la compétence</h3>
+            <p>
+                <strong>Optimiser des applications informatiques</strong> consiste à améliorer les performances, 
+                l'efficacité et la qualité des systèmes informatiques existants. Cette compétence englobe 
+                l'optimisation des ressources, la réduction de l'empreinte environnementale, l'amélioration 
+                de l'accessibilité et le respect des standards de qualité et de conformité.
+            </p>
+            <p>
+                Cette compétence est essentielle dans la formation BUT Informatique car elle développe une 
+                approche responsable et durable du développement logiciel. Elle permet de créer des applications 
+                performantes, éco-responsables et conformes aux standards internationaux, répondant aux enjeux 
+                actuels du numérique responsable.
+            </p>
+
+            <h3>Savoirs et savoir-faire requis</h3>
+            
+            <h4>Savoirs théoriques</h4>
+            <ul>
+                <li><strong>Éco-conception numérique</strong> : Principes du Green IT, analyse du cycle de vie</li>
+                <li><strong>Standards web</strong> : Normes W3C, accessibilité (WCAG), bonnes pratiques</li>
+                <li><strong>Performance web</strong> : Optimisation du chargement, compression, cache</li>
+                <li><strong>Qualité logicielle</strong> : Métriques de performance, tests de validation</li>
+                <li><strong>Développement durable</strong> : Impact environnemental du numérique</li>
+            </ul>
+
+            <h4>Savoir-faire pratiques</h4>
+            <ul>
+                <li><strong>Audit environnemental</strong> : Utilisation d'outils comme EcoIndex pour mesurer l'impact</li>
+                <li><strong>Validation de conformité</strong> : Tests W3C, validation HTML/CSS, accessibilité</li>
+                <li><strong>Optimisation technique</strong> : Compression d'images, minification, optimisation du DOM</li>
+                <li><strong>Mesure de performance</strong> : Analyse des métriques, identification des goulots d'étranglement</li>
+                <li><strong>Amélioration continue</strong> : Itérations d'optimisation basées sur les mesures</li>
+            </ul>
+
+            <h3>Mise en œuvre lors des SAÉ</h3>
+            
+            <div class="sae-analysis">
+                <h4>SAÉ S1.05-06 : Site web TechSpotlight-Atos</h4>
+                
+                <p><strong>Contexte du projet :</strong></p>
+                <p>
+                    Développement en équipe de 4 personnes d'un site web informatif sur l'entreprise Atos, 
+                    avec un focus particulier sur l'optimisation environnementale et la conformité aux standards 
+                    web. <strong>Référent du groupe</strong>, j'ai coordonné le projet avec <strong>Ayman MAAROUFI</strong>, 
+                    <strong>Mohamed-Younes IMLOUL</strong> et <strong>Johan HUNDERT</strong>. Ma contribution principale : 
+                    développement de la page Économie, participation à l'architecture NavBar/Footer, et coordination 
+                    de l'équipe pour l'optimisation et la validation.
+                </p>
+                
+                <p><strong>Période de réalisation :</strong></p>
+                <ul>
+                    <li><strong>Période :</strong> Du 3 septembre au 24 octobre 2024</li>
+                    <li><strong>Rendu :</strong> Jeudi 24 octobre 2024</li>
+                    <li><strong>Soutenance :</strong> Jeudi 24 octobre 2024</li>
+                    <li><strong>Durée du projet :</strong> 7 semaines et 3 jours</li>
+                </ul>
+                
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    <a href="https://github.com/LAFAYMehdi/TechSpotlight-Atos" target="_blank" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Voir le code source sur GitHub
+                    </a>
+                </p>
+
+                <p><strong>Évolution par rapport à la Compétence 1 :</strong></p>
+                <p>
+                    Alors que la Compétence 1 se concentrait sur la réalisation d'applications (développement du 
+                    Vocodeur du Pauvre en Java), cette seconde compétence met l'accent sur l'optimisation et 
+                    l'amélioration d'applications web existantes. L'évolution porte sur une approche plus mature 
+                    du développement, intégrant les contraintes environnementales, les standards de qualité et 
+                    une démarche d'optimisation continue basée sur des métriques objectives.
+                </p>
+
+                <p><strong>Savoirs mobilisés :</strong></p>
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Savoirs (connaissances théoriques)</th>
+                            <th>Situation d'application</th>
+                            <th>Résultat obtenu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Éco-conception numérique</td>
+                            <td>Compréhension des principes du Green IT et de l'impact environnemental du numérique</td>
+                            <td>Choix techniques orientés développement durable</td>
+                        </tr>
+                        <tr>
+                            <td>Standards web W3C</td>
+                            <td>Maîtrise des normes HTML5/CSS3 et des règles de conformité</td>
+                            <td>Code respectant les standards internationaux</td>
+                        </tr>
+                        <tr>
+                            <td>Métriques de performance web</td>
+                            <td>Connaissance des indicateurs de qualité (poids, requêtes, complexité DOM)</td>
+                            <td>Optimisation basée sur des critères objectifs</td>
+                        </tr>
+                        <tr>
+                            <td>Méthodologies de travail collaboratif</td>
+                            <td>Principes de gestion d'équipe et de coordination de projet</td>
+                            <td>Organisation efficace du travail en groupe</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                
+                <p><strong>Savoir-faire mobilisés :</strong></p>
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Savoir-faire (compétences pratiques)</th>
+                            <th>Situation d'application</th>
+                            <th>Résultat obtenu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Audit environnemental avec outils spécialisés</td>
+                            <td>Utilisation d'EcoIndex.fr pour mesurer l'impact de chaque page</td>
+                            <td>Optimisation concrète de l'empreinte carbone</td>
+                        </tr>
+                        <tr>
+                            <td>Validation de conformité technique</td>
+                            <td>Tests systématiques avec validateur W3C officiel</td>
+                            <td>Conformité totale aux standards internationaux</td>
+                        </tr>
+                        <tr>
+                            <td>Optimisation technique de performance</td>
+                            <td>Compression d'images, minification CSS, optimisation structure HTML</td>
+                            <td>Site léger et performant</td>
+                        </tr>
+                        <tr>
+                            <td>Leadership et coordination d'équipe</td>
+                            <td>Référent du groupe : répartition des tâches, validation croisée, suivi projet</td>
+                            <td>Note 19.80/20 - Meilleure note de la promotion</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <h3>Traces et illustrations</h3>
+            
+            <div class="trace">
+                <h4>Trace 1 : Validation W3C - Conformité aux standards</h4>
+                <p><strong>Contexte :</strong> Capture d'écran du validateur W3C officiel montrant la validation réussie du code HTML/CSS du site TechSpotlight-Atos</p>
+                <p><strong>Justification :</strong> Cette trace démontre ma maîtrise des standards web internationaux et ma capacité à produire du code conforme aux normes W3C, garantissant l'interopérabilité et la qualité technique</p>
+                
+                <img src="capture_W3C_techspotlight.png" alt="Validation W3C TechSpotlight" style="max-width: 100%; border: 1px solid #dee2e6; border-radius: 4px; margin: 1rem 0;">
+                <p><em>Figure 1 : Capture d'écran du validateur W3C confirmant la conformité totale du code HTML/CSS. Cette validation illustre le respect scrupuleux des standards internationaux et la qualité technique du développement web réalisé.</em></p>
+                
+                <p>
+                    Pour obtenir cette validation, j'ai dû mobiliser des <strong>savoirs en standards web W3C</strong> : 
+                    structuration sémantique HTML5 avec balises appropriées (header, nav, main, section, footer), 
+                    syntaxe CSS3 conforme aux spécifications, et respect des règles d'accessibilité WCAG. On observe 
+                    dans la figure le message "Document checking completed. No errors or warnings to show" qui confirme 
+                    la conformité totale du code, résultat d'une validation rigoureuse de chaque page du site.
+                </p>
+                
+                <p>
+                    Pour obtenir cette validation, j'ai testé chaque page du site avec le validateur W3C officiel. 
+                    J'ai dû corriger plusieurs erreurs : balises mal fermées, attributs incorrects, problèmes de CSS. 
+                    Le plus difficile était de corriger ces erreurs sans casser l'apparence du site. Cette validation 
+                    garantit que le site fonctionne correctement sur tous les navigateurs.
+                </p>
+                
+                <p>
+                    Cette validation illustre également mes <strong>savoir-faire en optimisation de la qualité web</strong> : 
+                    capacité à diagnostiquer et corriger les non-conformités, à structurer le code pour faciliter la 
+                    maintenance, et à garantir l'interopérabilité entre navigateurs. La conformité W3C constitue un 
+                    prérequis essentiel pour l'optimisation avancée, car elle assure une base technique solide pour 
+                    les améliorations de performance et d'accessibilité ultérieures.
+                </p>
+            </div>
+
+            <div class="trace">
+                <h4>Trace 2 : Audit éco-conception - Impact environnemental</h4>
+                <p><strong>Contexte :</strong> Capture d'écran de l'audit environnemental réalisé avec EcoIndex.fr pour mesurer l'empreinte carbone du site TechSpotlight-Atos</p>
+                <p><strong>Justification :</strong> Cette trace illustre ma maîtrise de l'éco-conception numérique et ma capacité à optimiser les applications pour réduire leur impact environnemental</p>
+                
+                <img src="capture_ecoconception_techspotlight.png" alt="Audit EcoIndex TechSpotlight" style="max-width: 100%; border: 1px solid #dee2e6; border-radius: 4px; margin: 1rem 0;">
+                <p><em>Figure 2 : Capture d'écran de l'audit EcoIndex.fr montrant l'évaluation environnementale du site. Cette mesure illustre l'application concrète des principes d'éco-conception dans le développement web.</em></p>
+                
+                <p>
+                    Pour réaliser cet audit, j'ai dû mobiliser des <strong>savoirs en éco-conception numérique</strong> : 
+                    compréhension des métriques environnementales (émissions CO2, consommation énergétique, complexité DOM), 
+                    connaissance des principes du Green IT et maîtrise des outils de mesure comme EcoIndex.fr. On observe 
+                    dans la figure les résultats de l'audit avec les métriques spécifiques (poids de la page, nombre de 
+                    requêtes HTTP, éléments DOM) qui permettent de calculer l'impact environnemental du site web.
+                </p>
+                
+                <p>
+                    Pour améliorer l'impact environnemental du site, j'ai appliqué plusieurs optimisations : 
+                    compression des images pour réduire leur taille, simplification du CSS, regroupement des fichiers 
+                    pour diminuer le nombre de requêtes. L'objectif était de rendre le site plus léger et donc moins 
+                    gourmand en énergie, tout en gardant la même qualité visuelle et les mêmes fonctionnalités.
+                </p>
+                
+                <p>
+                    Cette trace illustre mes <strong>savoir-faire en mesure et amélioration de la performance environnementale</strong> : 
+                    capacité à utiliser des outils d'audit spécialisés, à interpréter les métriques d'éco-conception, et à 
+                    mettre en place des optimisations ciblées basées sur des données objectives. Cette démarche démontre ma 
+                    maîtrise de la <strong>compétence "Optimiser des applications informatiques"</strong>, particulièrement 
+                    dans le domaine émergent du numérique responsable et du développement durable.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#competence1" class="btn btn-outline">← Compétence 1</a>
+                <a href="#accueil" class="btn">↑ Retour au sommaire</a>
+                <a href="#contact" class="btn">Contact →</a>
+            </div>
+        </section>
+
+        <!-- COMPLEMENTARITE ET REFLEXION -->
+        <section class="card">
+            <h2>Complémentarité des compétences</h2>
+            <p>
+                Les compétences "Réaliser un développement d'application" et "Optimiser des applications informatiques" 
+                forment un continuum logique dans l'apprentissage du développement logiciel. La première établit les 
+                fondamentaux techniques, tandis que la seconde développe une approche plus mature et responsable, 
+                intégrant les enjeux de qualité, performance et durabilité.
+            </p>
+            
+            <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Compétence 1</th>
+                        <th>Compétence 2</th>
+                        <th>Synergie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Focus principal</td>
+                        <td>Réalisation fonctionnelle</td>
+                        <td>Optimisation et qualité</td>
+                        <td>Applications performantes ET fonctionnelles</td>
+                    </tr>
+                    <tr>
+                        <td>Outils/Méthodes</td>
+                        <td>Java, Swing, SonarLint</td>
+                        <td>W3C, EcoIndex, Green IT</td>
+                        <td>Démarche qualité transversale</td>
+                    </tr>
+                    <tr>
+                        <td>Approche</td>
+                        <td>Développement from scratch</td>
+                        <td>Amélioration continue</td>
+                        <td>Cycle de développement complet</td>
+                    </tr>
+                    <tr>
+                        <td>Résultats</td>
+                        <td>Vocodeur fonctionnel (20/20)</td>
+                        <td>Site optimisé (19.80/20)</td>
+                        <td>Excellence technique globale</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <h3>Réflexion critique et perspectives</h3>
+            
+            <h4>Bilan global</h4>
+            <p>
+                Les excellents résultats obtenus sur les deux projets (20/20 pour le Vocodeur du Pauvre et 19.80/20 
+                pour TechSpotlight-Atos) témoignent d'une progression cohérente. La Compétence 1 semble légèrement 
+                mieux maîtrisée du fait de ma familiarité avec la programmation Java, tandis que la Compétence 2 
+                a ouvert de nouveaux horizons sur l'éco-conception et les standards web, domaines en pleine expansion.
+            </p>
+
+            <h4>Axes d'amélioration prioritaires</h4>
+            <ul>
+                <li><strong>Accessibilité pour tous</strong> : Apprendre à créer des sites utilisables par les personnes en situation de handicap (malvoyants, malentendants, etc.)</li>
+                <li><strong>Mesure de la rapidité des sites</strong> : Utiliser des outils pour vérifier que les pages se chargent rapidement sur tous les appareils</li>
+                <li><strong>Impact environnemental complet</strong> : Comprendre l'empreinte écologique d'une application de sa création à sa suppression</li>
+            </ul>
+
+            <h4>Perspectives pour la suite</h4>
+            <p>
+                Ces compétences constituent un socle solide pour aborder les compétences plus spécialisées du référentiel 
+                BUT (administrer des systèmes, gérer des données, conduire un projet). L'approche qualité et responsable 
+                développée ici sera transposable aux projets de 2ème et 3ème année, notamment dans les SAÉ impliquant 
+                des applications web complexes, des bases de données ou des architectures distribuées.
+            </p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#competence1" class="btn btn-outline">← Compétence 1</a>
+                <a href="#competence2" class="btn btn-outline">← Compétence 2</a>
+                <a href="#accueil" class="btn">↑ Retour au sommaire</a>
+                <a href="#contact" class="btn">Contact →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact</h2>
+        <p>
+            <strong>Mehdi LAFAY</strong><br>
+            Étudiant BUT Informatique - Première année<br>
+            Email : <a href="mailto:mehdi.lafay@edu.univ-fcomte.fr">mehdi.lafay@edu.univ-fcomte.fr</a>
+        </p>
+        <p class="eco-note">
+            <small>✅ Site éco-conçu : Une seule page, CSS inline, polices système, validé W3C</small>
+        </p>
+        <div style="margin-top: 1rem;">
+            <a href="#accueil" class="btn btn-outline">↑ Retour en haut</a>
+        </div>
+    </footer>
+</body>
+</html> 
